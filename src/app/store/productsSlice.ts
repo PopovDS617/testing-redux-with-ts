@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import type { Product } from '../api';
 
 export interface ProductState {
@@ -6,17 +6,21 @@ export interface ProductState {
 }
 
 const initialState: ProductState = {
-  products: {
-    one: {
-      name: 'testprod',
-    },
-  },
+  products: {},
 };
 
 const productsSlice = createSlice({
   name: 'products',
   initialState,
-  reducers: {},
+  reducers: {
+    receivedProducts(state, action: PayloadAction<Product[]>) {
+      const products = action.payload;
+      products.forEach((product) => {
+        state.products[product.id] = product;
+      });
+    },
+  },
 });
 
 export default productsSlice.reducer;
+export const { receivedProducts } = productsSlice.actions;
