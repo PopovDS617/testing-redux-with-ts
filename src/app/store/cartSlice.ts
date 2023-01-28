@@ -101,13 +101,6 @@ export const getMomizedNumItems = createSelector(
   }
 );
 
-// export const checkout = () => {
-//   const checkoutThunk = (dispatch: AppDispatch) => {
-//     dispatch({ type: 'cart/checkout/pending' });
-//   };
-//   return checkoutThunk;
-// };
-
 export const getTotalPrice = createSelector(
   (state: RootState) => state.cart.items,
   (state: RootState) => state.products.products,
