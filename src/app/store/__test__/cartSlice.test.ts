@@ -410,7 +410,6 @@ describe('thunks', () => {
       const store = getStoreWithState(state);
       expect(store.getState().cart.checkoutState).toEqual('READY');
       const action = store.dispatch(checkoutCart());
-      console.log(action);
 
       expect(store.getState().cart.checkoutState).toEqual('LOADING');
       await action;
