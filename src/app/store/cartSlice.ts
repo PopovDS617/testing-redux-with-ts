@@ -70,7 +70,6 @@ const cartSlice = createSlice({
           } else {
             state.checkoutState = 'ERROR';
           }
-          state.checkoutState = 'READY';
         }
       ),
       builder.addCase(checkoutCart.rejected, (state, action) => {

@@ -1,5 +1,5 @@
-import productsReducer, { receivedProducts } from './productsSlice';
-import products from '../../../public/products.json';
+import productsReducer, { receivedProducts } from '../productsSlice';
+import products from '../../../../public/products.json';
 
 describe('products reducer', () => {
   it('should return the initial state when passed an empty action', () => {
